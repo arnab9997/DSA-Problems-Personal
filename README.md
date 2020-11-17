@@ -1,1 +1,1 @@
-THis Repo contains solutions to problems I have solved from major platforms.
+This Repo contains solutions to problems I have solved from major platforms.
