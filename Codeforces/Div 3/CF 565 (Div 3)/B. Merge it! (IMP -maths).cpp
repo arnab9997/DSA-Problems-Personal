@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+//#define REP(i, a, n) for(int i=a; i<n; ++i)
+#define REP(i, st, en) for(__typeof(en) i=(st)-(st>en); i!=(en)-(st>en); i+=1-2*(st>en))
+#define pb push_back
+#define sz(x) (int)((x).size())
+#define all(x) (x).begin(), (x).end()
+
+typedef pair<int, int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+
+const double PI = 3.141592653589793238460;
+const ll mod = 1e9+7;
+
+void FAST(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+}
+
+bool comp(const pair<int, int> &a, const pair<int, int> &b){
+  return (a.first > b.second);
+}
+
+void solve(){
+  int n;
+  cin >> n;
+
+  vi cnt(3, 0);
+  REP(i, 0, n){
+    int x;
+    cin >> x;
+    cnt[x % 3]++;
+  }
+
+  int ans = cnt[0];
+  int minm = min (cnt[1], cnt[2]);
+  cnt[1] -= minm, cnt[2] -= minm;
+  ans += minm;
+
+  ans += (cnt[1] + cnt[2]) / 3;     // either one is =0 at this point.
+
+  cout << ans << endl;
+}
+
+int main(){
+  FAST();
+  //Code goes past here:
+
+  int t = 1;
+  cin >> t;
+  while(t--){
+    solve();
+  }
+  return 0;
+}
