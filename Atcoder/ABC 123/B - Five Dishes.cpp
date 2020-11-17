@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define REP(i, a, n) for(int i=a; i<n; ++i)
+#define pb push_back
+#define sz(x) (int)((x).size())
+#define all(x) (x).begin(), (x).end()
+
+typedef pair<int, int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+
+const double PI = 3.141592653589793238460;
+const ll mod = 1e9 + 7;
+
+void FAST(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+}
+
+int main(){
+  FAST();
+
+  vii arr(5);
+  REP(i, 0, 5){
+      int t, r;
+      cin >> t;
+      r = (t % 10 != 0) ? (10 - t % 10) : 0;
+      arr[i] = {r, t};
+  }
+  sort(all(arr));
+
+  int ans = 0;
+  REP(i, 0, 5){
+      ans += arr[i].second;
+      if(ans % 10 != 0 && i != 4)
+        ans += 10 - ans % 10;
+  }
+
+  cout << ans << endl;
+  return 0;
+}
