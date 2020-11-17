@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int countHi(string str1, string str2){
+    int n1= str1.length();
+    int n2= 2;
+    if(n1<2)
+        return 0;
+    if(str1.substr(0, n2).compare(str2)==0)
+        return 1 + countHi(str1.substr(n2-1), str2);
+    return countHi(str1.substr(n2-1), str2);
+}
+
+int main(){
+  string str1;
+  cin>>str1;
+  cout<<countHi(str1, "hi");
+  return 0;
+}

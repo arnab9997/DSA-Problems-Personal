@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string changePi(string str){
+    int n= str.length();
+    if(n<2)
+        return str;
+    else{
+        if(str.substr(0,2).compare("pi")==0){
+            str.replace(0, 2, "3.14");
+            return str.substr(0,4) + changePi(str.substr(4));
+        }
+        return str.substr(0,1) +  changePi(str.substr(1));
+    }
+}
+
+int main(){
+    string str;
+    cin>>str;
+    cout<<changePi(str)<<endl;
+    return 0;
+}

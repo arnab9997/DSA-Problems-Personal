@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string allStar(string str){
+    if(str.length()<2)
+        return str;
+    else{
+        return str.substr(0,1) + "*" + allStar(str.substr(1));
+    }
+}
+
+int main(){
+  string str;
+  cin>>str;
+  cout<<allStar(str)<<endl;
+  return 0;
+}

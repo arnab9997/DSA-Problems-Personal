@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+#include<cstdio>
+using namespace std;
+
+int countX(char x[], char *ch){
+   if(*ch=='\0')
+    return 0;
+   else
+    return ((*ch=='x')?1:0) + countX(x, ++ch);
+}
+
+int main(){
+  char str[100], *ch;
+  scanf("%s", str);
+  ch= str;
+  printf("%d", countX(str, ch));
+  return 0;
+}

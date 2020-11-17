@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int countX(string s, int i){
+   if(i==s.length())
+    return 0;
+   else
+    return ((s[i]=='x')?1:0) + countX(s, ++i);
+}
+
+int main(){
+  string str;
+  int i=0;
+  cin>>str;
+  cout<<countX(str, i)<<endl;
+  return 0;
+}

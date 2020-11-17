@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string changeXY(string str){
+    int n1= str.length();
+    if(n1==0)
+        return str;
+    else{
+      if(str[0]=='x'){
+        str[0]= 'y';
+        return str[0] + changeXY(str.substr(1));
+      }
+      return str[0] + changeXY(str.substr(1));
+    }
+}
+
+int main(){
+  string str;
+  cin>>str;
+  cout<<changeXY(str);
+  return 0;
+}
